@@ -1,6 +1,8 @@
 import React from 'react';
 
 import Aux from "../../../hoc/Auxiliaty"
+import Button from "../../UI/Button/Button"
+
 
 const orderSumamry = (props) =>  {
     let ingredientSummary = Object.keys(props.ingredients).map(igKey => {
@@ -23,6 +25,8 @@ const orderSumamry = (props) =>  {
                 {ingredientSummary}
             </ul>
             <p>Continue the checkout</p>
+            <Button btnType='Danger' clicked={props.purchaseCancelled}>CANCEL</Button>
+            <Button  btnType='Success' clicked={props.purchaseContinued}>CONTINUE</Button>
         </Aux>
     )
 }
